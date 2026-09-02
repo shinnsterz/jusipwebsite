@@ -1,0 +1,103 @@
+/* =========================================================
+   CREW ON SET — THEME B · CONTROL ROOM
+   Admin portal only. Deep neutral charcoal surfaces (#1A1B1E)
+   with a dark slate sidebar, monitoring-software feel.
+   ========================================================= */
+
+.admin-theme {
+  --control-bg: #1a1b1e;
+  --control-surface: #22242a;
+  --control-surface-2: #2a2d34;
+  --control-line: rgba(255, 255, 255, 0.07);
+  background-color: var(--control-bg);
+  color: #eceef1;
+}
+
+/* Faint scanline texture so the console reads as monitoring gear. */
+.admin-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 100% 3px;
+}
+
+/* Re-map the migrated navy-tinted darks onto the neutral
+   control-room palette without touching any markup. */
+.admin-theme .bg-\[\#101923\],
+.admin-theme .bg-\[\#0d121b\],
+.admin-theme .bg-\[\#090e12\],
+.admin-theme .bg-\[\#0d1217\] {
+  background-color: var(--control-bg);
+}
+
+.admin-theme .bg-\[\#182330\],
+.admin-theme .bg-\[\#141e29\],
+.admin-theme .bg-\[\#151c21\],
+.admin-theme .bg-\[\#11171b\],
+.admin-theme .bg-\[\#171f23\],
+.admin-theme .bg-\[\#151c28\] {
+  background-color: var(--control-surface);
+}
+
+.admin-theme .bg-\[\#1c2636\],
+.admin-theme .bg-\[\#1d2a38\],
+.admin-theme .bg-\[\#202a3a\],
+.admin-theme .bg-\[\#243241\],
+.admin-theme .bg-\[\#222b31\],
+.admin-theme .bg-\[\#1b2545\] {
+  background-color: var(--control-surface-2);
+}
+
+.admin-theme .border-\[\#151c28\] {
+  border-color: var(--control-line);
+}
+
+/* Sidebar: neutral dark gray, kept as a sidebar per spec. */
+.admin-theme aside.bg-navy,
+.admin-theme header.bg-navy {
+  background-color: #202226;
+}
+
+/* Cards and tables inherit the console palette. */
+.admin-theme .admin-card,
+.admin-theme .admin-table-wrap {
+  border-color: var(--control-line);
+  background-color: var(--control-surface);
+}
+
+.admin-theme .admin-table thead {
+  border-color: var(--control-line);
+  background-color: rgba(255, 255, 255, 0.035);
+  color: rgba(236, 238, 241, 0.5);
+}
+
+.admin-theme .admin-table td {
+  border-color: var(--control-line);
+  color: rgba(236, 238, 241, 0.72);
+}
+
+.admin-theme .admin-table tbody tr:hover {
+  background-color: rgba(247, 201, 54, 0.06);
+}
+
+.admin-theme .admin-heading {
+  color: #f4f6f8;
+}
+
+.admin-theme .admin-kicker {
+  color: rgba(236, 238, 241, 0.45);
+}
+
+.admin-theme .admin-input {
+  border-color: var(--control-line);
+  background-color: #191b1f;
+  color: #eceef1;
+}
+
+.admin-theme .admin-input::placeholder {
+  color: rgba(236, 238, 241, 0.35);
+}
